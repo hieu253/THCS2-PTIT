@@ -5,7 +5,7 @@ int main(int argc, char const *argv[])
 	int t;
 	scanf("%d",&t);
 	while(t--){
-	char c;
+	char c=' ';
 	int n=0;
 	int chan=0,le=0;
 	while(c!='\n')

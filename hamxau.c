@@ -2,6 +2,8 @@
 #include<string.h>
 #include<ctype.h>
 #include<stdlib.h>
+    //getchar: doc 1 ki tu tu ban phim
+    
 	// int islower(char c)
 	// int isupper(char c)
 	// int isalpha(char c)
