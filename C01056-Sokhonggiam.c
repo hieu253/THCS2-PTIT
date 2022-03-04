@@ -1,24 +1,27 @@
 #include<stdio.h>
-int check(int n){
-	int a=n%10;
-	n/=10;
-	while(n>0){
-		if(n%10>=a)	return 0 ;
-		a=n%10;
-		n/=10;
-
-	}
-	return 1;
-}
-
+#include<string.h>
 int main(int argc, char const *argv[])
 {
-	int t,n;
-	scanf("%d",&t);
+	int t;
+	scanf("%d\n",&t);
 	while(t--){
-		scanf("%d",&n);
-		if(check(n))	 printf("YES\n");
-		else			printf("NO\n");
+		char c[200];
+		gets(c);
+	int size=strlen(c);
+	int check=0;
+	for (int i = 1; i < size; ++i)
+	{
+		if(c[i]<c[i-1])
+		{
+			check=1;
+			break;
 		}
+	}
+		if(check==1)	printf("NO\n");
+		else			printf("YES\n");
+	
+	}
+
+
 	return 0;
 }
