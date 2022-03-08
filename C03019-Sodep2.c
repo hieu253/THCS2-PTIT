@@ -3,11 +3,11 @@
 int thuannghich(int n){
 	int a=n;
 	int res=0;
-	while(n>0){
-		res=res*10+n%10;
-		n/=10;
+	while(a>0){
+		res=res*10+a%10;
+		a/=10;
 	}
-	if(res==a)	return 1;
+	if(res==n)	return 1;
 	return 0;
 }
 int tongcs(int n){

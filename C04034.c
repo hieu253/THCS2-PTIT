@@ -8,14 +8,13 @@ void nhap(int a[],int n){
 void xuat(int a[],int n){
 	for(int i=0;i<n;i++){
 		int check=1;
-		for(int j=i+1;j<n;j++){
-			if(a[i]>a[j])	{
-				check=1;
-			}
-			else {
-				check =0;
+		for(int j=i+1;j<n;j++)
+		{
+			if(a[i]<=a[j])
+			{
+				check=0;
 				break;
-		}
+			}
 		}
 	if(check==1)	printf("%d ",a[i]);
 	}

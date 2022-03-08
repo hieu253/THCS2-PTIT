@@ -10,7 +10,8 @@ int thuannghich(int n){
 	if(res==a)	return 1;
 	return 0;
 }
-int tongcs(int n){
+int tongcs(int n)
+	{
 	int sum=0;
 	int dem=0;
 	while(n>0){
@@ -21,7 +22,6 @@ int tongcs(int n){
 	}
 	if(sum%10==8&&dem>=1)	return 1;
 	return 0;
-
 }
 int main(int argc, char const *argv[])
 {

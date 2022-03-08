@@ -12,7 +12,7 @@ int fb(int n)
 }
 int main()
 {
-   int i,n,d=0;
+   int n;
    scanf("%d",&n);
    printf("%d",fb(n));
    

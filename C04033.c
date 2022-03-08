@@ -9,12 +9,12 @@ void nhap(int a[],int n)
 }
 void xuly(int a[], int n)
 {
-    int i,j,b[100]={0};
-    for(i=0;i<n;i++)
+    int b[100]={0};
+    for(int i=0;i<n;i++)
     {
         if(b[i]==0)
         {
-        for(j=i+1;j<n;j++)
+        for(int j=i+1;j<n;j++)
         {
             if(a[i]==a[j])
             {
@@ -23,7 +23,7 @@ void xuly(int a[], int n)
         }
     }
 }
-    for(i=0;i<n;i++)
+    for(int i=0;i<n;i++)
     {
         if(b[i]!=-1)
         {

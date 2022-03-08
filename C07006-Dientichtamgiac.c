@@ -1,23 +1,33 @@
 #include<stdio.h>
 #include<math.h>
-int main(int argc, char const *argv[])
+struct point 
+{
+	double x,y;
+};
+typedef struct point point;
+double kc(point a,point b){
+	double dx=a.x-b.x,dy=a.y-b.y;
+	return sqrt(dx*dx+dy*dy);	
+}
+double check(double a, double b,double c){
+	if(a+b<=c||a+c<=b||b+c<=a)	return 0;
+	return 1;
+}
+int main()
 {
 	int t;
 	scanf("%d",&t);
 	while(t--){
-		double a,b,c,ax,ay,bx,by,cx,cy,d1,d2,d3,s;
-		scanf("%lf %lf %lf %lf %lf %lf",&ax,&ay,&bx,&by,&cx,&cy);
-		d1=sqrt(pow((bx-ax),2)+pow((by-ay),2));
-		d2=sqrt(pow((cx-bx),2)+pow((cy-by),2));
-		d3=sqrt(pow((ax-cx),2)+pow((ay-cy),2));
-		a=d1;
-		b=d2;
-		c=d3;
-		s=(sqrt((a+b+c)*(a+b-c)*(b+c-a)*(c+a-b)))/4;
-		if(!(c>=a+b||a>=b+c||b>=c+a))
-			printf("%.2lf\n",s);
-		else
+		point a,b,c;
+		scanf("%lf%lf%lf%lf%lf%lf",&a.x,&a.y,&b.x,&b.y,&c.x,&c.y);
+		double d1=kc(a,b),d2=kc(b,c),d3=kc(a,c);
+		if(!check(d1,d2,d3))
 			printf("INVALID\n");
-		}	
+		else
+		{
+			double s=(d1+d2+d3)*(d1+d2-d3)*(-d1+d2+d3)*(d1-d2+d3);
+			printf("%.2f\n",0.25*sqrt(s));
+		}
+	}
 	return 0;
 }
