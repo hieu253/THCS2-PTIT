@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 			if(i==a)	printf("%d ",t[b][j]);
 			else if(i==b)	printf("%d ",t[a][j]);
 			else	printf("%d ",t[i][j]);
-		}
+		}	
 		printf("\n");
 	}
 	return 0;

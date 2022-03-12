@@ -1,36 +1,64 @@
-#include <stdio.h>
+#include<stdio.h>
 #include<math.h>
 int ngto(int n){
-	if(n<2)	return 0 ;
-	else{
-		for(int i=2;i<=sqrt(n);i++)	
-			if(n%i==0)
-			return 0;
-	}
-	return 1;
+    int i;
+    if(n<2){
+        return 0;
+    }
+    for(i=2;i<sqrt(n);i++){
+        if(n%i==0){
+            return 0;
+            break;
+        }
+    }
+    return 1;
 }
-int main(int argc, char const *argv[])
-{
-	int n,T,i,a[1000];
-	int d[1000]={0};
-	scanf("%d",&T);
-	int max=0;
-	for(int t=1;t<=T;t++){
-		scanf("%d",&n);
-		for(i=0;i<n;i++){
-			scanf("%d",&a[i]);
-			if (a[i] > max)
-            max = a[i];
-			if(ngto(a[i])==1)	
-				d[a[i]]++;
-		}
-	printf("Test %d:\n",t);
-		for(i=2;i<max;i++){
-			if(d[i]>=1)
-				printf("%d xuat hien %d lan\n",i,d[i]);
-			d[a[i]]=0;
-		}
-		
-	}
-	return 0;
+void nhap(int a[],int n){
+    int i;
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+}
+
+void xuly(int a[],int n){
+    int b[100]={0},i,j;
+    for( i=0;i<n;i++){
+    for( j=i+1;j<n;j++){
+    if(a[i] >= a[j]){
+    int doi = a[i];
+    a[i] =a[j];
+    a[j] = doi;
+        }
+    }
+}
+    for(i=0;i<n;i++){
+        if(b[i]==0){
+            b[i]=1;
+        for(j=i+1;j<n;j++){
+            if(a[i]==a[j]){
+                b[i]++;
+                b[j]=-1;
+            }
+        }
+    }
+}
+for(i=0;i<n;i++){
+    if(ngto(a[i])){
+    if(b[i]!=-1){
+    printf("%d xuat hien %d lan\n",a[i],b[i]);
+}
+}
+}
+}
+
+int main(){
+    int t,x;
+    scanf("%d",&t);
+    for(x=1;x<=t;x++){
+    int n,a[100];
+    scanf("%d",&n);
+    nhap(a,n);
+    printf("Test %d:\n",x);
+    xuly(a,n);
+}
 }

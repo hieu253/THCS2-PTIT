@@ -1,16 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-int check(int n){
-	int dem=0;
-	for (int i = 2; i <=sqrt(n) ; ++i)
-	{
-		if(n%i==0){
-			if(i%2==0)	dem++;
-			if((n/i)%2==0)	dem++;
-		}
-	}
-	return dem;
-}
+
 int main(int argc, char const *argv[])
 {
 	int t;
