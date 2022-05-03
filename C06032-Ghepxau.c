@@ -1,42 +1,35 @@
 #include<stdio.h>
 #include<string.h>
+#include<ctype.h>
+#include<stdlib.h>
+int cmp(const  void *a,const void *b)
+{
+	char x[100],y[100],z[100],t[100];
+	strcpy(x,(char *)a);	strcpy(z,x);
+	strcpy(y,(char *)b);	strcpy(t,y);
+	strcat(x,y);
+	strcat(t,z);
+	return strcmp(x,t);
+}
 int main(int argc, char const *argv[])
 {
 	int t;
 	scanf("%d",&t);
-	while(t--){
+	while(t--)
+	{
 		int n;
-		char a[100][100];
-		scanf("%d",&n);
-		for (int i = 0; i <n ; ++i)
+		scanf("%d ",&n);
+		char a[n][100];
+		for (int i = 0; i < n; ++i)
 		{
-			scanf(" ");
 			scanf("%s",a[i]);
 		}
-		char x[100],y[100];
-		for (int i = 0; i <n-1 ; ++i)
-		{
-			for (int j = i+1; j <n ; ++j)
-			{
-				strcpy(x,a[i]);
-				strcat(x,a[j]);
-				strcpy(y,a[j]);
-				strcat(y,a[i]);
-				if(strcmp(x,y)>0){
-					strcpy(x,a[i]);
-					strcpy(a[i],a[j]);
-					strcpy(a[j],x);
-			}
-
-			}
-		}
+		qsort(a,n,sizeof(a[0]),cmp);
 		for (int i = 0; i < n; ++i)
 		{
 			printf("%s",a[i]);
 		}
 		printf("\n");
-
-
 	}
 	return 0;
 }

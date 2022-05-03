@@ -1,19 +1,21 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-int gcd(int a,int b){
+int gcd(int a,int b)
+{
 	if(b==0)	return a;
 	return gcd(b,a%b);
 }
 int lcm(int a,int b){
 	return (a*b)/gcd(a,b);
 }
-struct ps{
+struct ps
+{
 	int tu,mau;
 };
 typedef struct ps ps;
-
-ps rutgon(ps a){
+ps rutgon(ps a)
+{
 	int ucln= gcd(a.tu, a.mau);
 	a.tu/= ucln;
 	a.mau/= ucln;
@@ -25,7 +27,7 @@ void solve(ps a,ps b){
 	int mc=lcm(a.mau,b.mau);
 	a.tu=mc/a.mau*a.tu;
 	b.tu=mc/b.mau*b.tu;
-	a.mau=b.mau=mc;
+	a.mau=b.mau=mc;	
 	printf("%d/%d %d/%d\n",a.tu,a.mau,b.tu,b.mau); 	
 	ps tong,thuong;
 	tong.tu=a.tu+b.tu;
@@ -50,3 +52,5 @@ int main(int argc, char const *argv[])
 	}
 	return 0;
 }
+
+

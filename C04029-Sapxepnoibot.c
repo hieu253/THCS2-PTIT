@@ -16,7 +16,6 @@ void bubblesort(int a[],int n)
 				swap(&a[j],&a[j+1]);
 				check=1;
 			}
-
 		}
 		if(check==0) 	break;
 		printf("Buoc %d: ",i+1);

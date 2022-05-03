@@ -1,13 +1,11 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<math.h>
 int main(int argc, char const *argv[])
 {
-	int n;
-	scanf("%d",&n);
-	int a=n;
-	while(n>0){
-		if(n<10)	printf("%d ",n );
-		n/=10;
-	}
-	printf("%d ",a%10);
-	return 0;
+    int n;
+    scanf("%d",&n);
+    int s=(int) log10(n);
+    int a=pow(10,s);
+    printf("%d %d",n/a,n%10);
+    return 0;
 }

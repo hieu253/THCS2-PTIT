@@ -3,7 +3,6 @@
 #include<ctype.h>
 #include<stdlib.h>
     //getchar: doc 1 ki tu tu ban phim
-    
 	// int islower(char c)
 	// int isupper(char c)
 	// int isalpha(char c)
@@ -22,7 +21,7 @@
 	// char* strcat(char c[],chat d[])	noi xau d vao duoi xau c
 	// int atoi(char c[]): tra ve so int cua xau ban dau
 	// long long atoll(char c[]): tra ve so long long cua xau ban dau
-	// 
+	//char *strstr(char a[],char b[]): check xau con .
 
 
 

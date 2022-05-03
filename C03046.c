@@ -19,7 +19,8 @@ bool check(int n)
         return 1;
     return 0;
 }
-void solve(){
+void solve()
+{
 	int n;
 	scanf("%d",&n);
 	int l=pow(10,n-1);
@@ -33,7 +34,8 @@ int main(int argc, char const *argv[])
 {
 	int t;
 	scanf("%d",&t);
-	while(t--){
+	while(t--)
+	{
 		solve();
 	}
 	return 0;

@@ -1,52 +1,27 @@
 #include<stdio.h>
-#include<math.h>
-int ngto(int n){
-    int i;
-    if(n<2){
-        return 0;
-    }
-    for(i=2;i<sqrt(n);i++){
-        if(n%i==0){
-            return 0;
-            break;
-        }
-    }
-    return 1;
-}
-
-
-void xuly(int a[],int n){
-    int b[100]={0},i,j;
-    for(i=0;i<n;i++)
+#include<string.h>
+int main(int argc, char const *argv[])
+{
+    char c[20];
+    scanf("%s",&c);
+    int b[10]={0};
+    int size=strlen(c);
+    for (int i = 0; i <size ; ++i)
     {
-        if(b[i]==0)
+        int a=c[i]-'0';
+        if(a==2||a==3||a==5||a==7)
         {
-            b[i]=1;
-        	for(j=i+1;j<n;j++)
-        	{
-            if(a[i]==a[j])
-            {
-                b[i]++;
-                b[j]=-1;
-            }
+            b[a]++;
         }
     }
-}
-	for(i=0;i<n;i++){
-    	if(ngto(a[i]))
-    	{
-    	if(b[i]!=-1)
-    	{
-    		printf("%d %d",a[i],b[i]);
-			}
-		}
-	}
-}
-
-int main(){
-    int n,a[100];
-    for(int i=0;i<n;i++)
-        scanf("%d",&a[i]);
-    xuly(a,n);
-
+    for (int i = 0; i <size ; ++i)
+    {
+        int a=c[i]-'0';
+        if(b[i]>0)
+        {
+            printf("%d %d\n",a,b[a]);  
+            b[a]=0;
+        }
+    }
+    return 0;
 }

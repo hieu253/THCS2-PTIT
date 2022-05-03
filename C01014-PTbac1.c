@@ -3,11 +3,13 @@ int main(int argc, char const *argv[])
 {
 	int a,b;
 	scanf("%d%d",&a,&b);
-	if(a==0){
+	if(a==0)
+	{
 		if(b==0)	printf("Vo so nghiem");
 		else		printf("Vo nghiem");
 	}
-	else{
+	else
+	{
 		printf("%.2f",(float)-b/a);
 	}
 	return 0;
